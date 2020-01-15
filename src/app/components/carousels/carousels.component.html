@@ -1,11 +1,12 @@
-<mdb-carousel class="carousel slide carousel-fade" [animation]="'fade'">
+<mdb-carousel class="carousel slide carousel-fade" [animation]="'fade'" *ngFor="let event of events">
     <mdb-carousel-item>
-      <img class="d-block w-100" src="https://mdbootstrap.com/img/Photos/Slides/img%20(68).jpg" alt="First slide">
+      <h3>{{event.title}} </h3>
+      <img class="d-block w-100" src="{{ events[0].image }}" alt="First slide">
     </mdb-carousel-item>
     <mdb-carousel-item>
-      <img class="d-block w-100" src="https://mdbootstrap.com/img/Photos/Slides/img%20(6).jpg" alt="Second slide">
+      <img class="d-block w-100" src="{{ events[1].image }}" alt="Second slide">
     </mdb-carousel-item>
     <mdb-carousel-item>
-      <img class="d-block w-100" src="https://mdbootstrap.com/img/Photos/Slides/img%20(9).jpg" alt="Third slide">
+      <img class="d-block w-100" src="{{ events[2].image }}" alt="Third slide">
     </mdb-carousel-item>
 </mdb-carousel>

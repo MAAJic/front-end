@@ -10,13 +10,17 @@ import { FormsModule } from '@angular/forms';
 import { NavBarComponent } from './components/nav-bar/nav-bar.component';
 import { ProfileComponent } from './components/profile/profile.component';
 import { CarouselsComponent } from './components/carousels/carousels.component';
+import { EventsComponent } from './components/carousels/events/events.component';
+import { EventItemComponent } from './components/carousels/event-item/event-item.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavBarComponent,
     ProfileComponent,
-    CarouselsComponent
+    CarouselsComponent,
+    EventsComponent,
+    EventItemComponent
   ],
   imports: [
     BrowserModule,
