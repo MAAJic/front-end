@@ -1,0 +1,8 @@
+  <div class="row text-center">
+
+    <!--Grid column-->
+    <div class="col-lg-4 col-md-12 mb-4" *ngFor="let event of pageOfItems">
+      <app-card [event]="event"></app-card>
+    </div>
+  </div>
+  <jw-pagination [items]="events" [pageSize]="6" [maxPages]="2" (changePage)="onChangePage($event)"></jw-pagination>

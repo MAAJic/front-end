@@ -1,0 +1,27 @@
+ <!-- Card -->
+ <mdb-card style="background-image: url({{ event.img }})" class="card-image mb-3 mx-2">
+   <!-- Content -->
+   <div class=" text-white text-center d-flex align-items-center rgba-black-strong py-5 px-4">
+     <div>
+       <h5 class="pink-text">
+         <mdb-icon fas icon="chart-pie"></mdb-icon>
+         {{ event.name }}
+       </h5>
+       <h3 class="card-title pt-2">
+         <strong>{{ event.price }}</strong>
+       </h3>
+       <p>
+         Location : Tunis
+       </p>
+       <p>
+         Date : 25 janvier 2020
+       </p>
+       <a mdbBtn color="pink" class="waves-light" mdbWavesEffect routerLink="/test" routerLinkActive="active">
+         <mdb-icon far icon="clone" class="left"></mdb-icon>
+         View project
+       </a>
+     </div>
+   </div>
+   <!-- Content -->
+ </mdb-card>
+ <!-- Card -->
