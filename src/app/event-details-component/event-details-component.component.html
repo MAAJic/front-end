@@ -1,0 +1,17 @@
+<div class="container">
+  <div class="row">
+    <div class="col-3">
+      <app-event-creator-details [creator] = 'NewEvent.creator'></app-event-creator-details>
+    </div>
+    <div class="col-9">
+      <app-main-image-event-banner [banner] = 'NewEvent.banner' ></app-main-image-event-banner>
+      <app-comment-component></app-comment-component>
+      <section class="my-5">
+        <div class="card-header border-0 font-weight-bold">{{NewEvent.comments.length}} comments</div>
+         <div class="media d-block d-md-flex mt-3" *ngFor="let comment of NewEvent.comments">
+          <app-single-comment-component [comment]= 'comment'></app-single-comment-component>
+        </div>
+      </section>
+    </div>
+  </div>
+</div>
