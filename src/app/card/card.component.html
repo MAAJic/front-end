@@ -1,44 +1,18 @@
- <!-- Card -->
-
- <div style="background-image: url('https://source.unsplash.com/random')"
-   class=" myCard card-image mb-3 mx-2 h-90">
-   <!-- Content -->
+ <div [ngStyle]="{ 'background-image': 'url(' + event.img + ')'}" class=" myCard card-image mb-3 mx-2 h-90">
    <div class=" masque">
+     <h5 class="eventName">{{ event.name }}</h5>
      <div class="centerText">
-       <h5 class="pink-text">
-         <mdb-icon fas icon="chart-pie"></mdb-icon>
-         {{ event.name }}
-       </h5>
-
-       <div style="
-       display: flex;
-       width: 100%;
-       align-items: flex-end;
-       justify-content: space-between;
-       padding: 0px 20px;
-   ">
-         <div class='info' style="
-         font-size: 1.2em;
-         text-align: left;
-     ">
-           <p>
-             Location : Tunis
-           </p>
-           <p>
-             Date : 25 janvier 2020
-           </p>
+       <div class="Details">
+         <div class='info'>
+           <p>Location : Tunis</p>
+           <p>Date : 25 janvier 2020</p>
          </div>
          <div>
-           <h3 class="card-title pt-2" style="
-         font-size: 3em;
-         ">
+           <h3 class="card-title pt-2 price">
              <strong>{{ event.price }}</strong>
            </h3>
          </div>
        </div>
      </div>
    </div>
-   <!-- Content -->
-  </div>
-
-
+ </div>

@@ -10,110 +10,92 @@ export class HomeComponent implements OnInit {
     {
       name: "test1",
       price: "50",
-      img:
-        "https://mdbootstrap.com/img/Photos/Horizontal/Work/4-col/img%20%2814%29.jpg"
+      img: "https://source.unsplash.com/random"
     },
     {
       name: "test2",
       price: "51",
-      img:
-        "https://mdbootstrap.com/img/Photos/Horizontal/Work/4-col/img%20%2814%29.jpg"
+      img: "https://source.unsplash.com/random"
     },
     {
       name: "test3",
       price: "52",
-      img:
-        "https://mdbootstrap.com/img/Photos/Horizontal/Work/4-col/img%20%2814%29.jpg"
+      img: "https://source.unsplash.com/random"
     },
     {
       name: "test4",
       price: "53",
-      img:
-        "https://mdbootstrap.com/img/Photos/Horizontal/Work/4-col/img%20%2814%29.jpg"
+      img: "https://source.unsplash.com/random"
     },
     {
       name: "test5",
       price: "54",
-      img:
-        "https://mdbootstrap.com/img/Photos/Horizontal/Work/4-col/img%20%2814%29.jpg"
+      img: "https://source.unsplash.com/random"
     },
     {
       name: "test6",
       price: "55",
-      img:
-        "https://mdbootstrap.com/img/Photos/Horizontal/Work/4-col/img%20%2814%29.jpg"
+      img: "https://source.unsplash.com/random"
     },
     {
       name: "test7",
       price: "56",
-      img:
-        "https://mdbootstrap.com/img/Photos/Horizontal/Work/4-col/img%20%2814%29.jpg"
+      img: "https://source.unsplash.com/random"
     },
     {
       name: "test8",
       price: "58",
-      img:
-        "https://mdbootstrap.com/img/Photos/Horizontal/Work/4-col/img%20%2814%29.jpg"
+      img: "https://source.unsplash.com/random"
     },
     {
       name: "test9",
       price: "59",
-      img:
-        "https://mdbootstrap.com/img/Photos/Horizontal/Work/4-col/img%20%2814%29.jpg"
+      img: "https://source.unsplash.com/random"
     },
     {
       name: "test10",
       price: "510",
-      img:
-        "https://mdbootstrap.com/img/Photos/Horizontal/Work/4-col/img%20%2814%29.jpg"
+      img: "https://source.unsplash.com/random"
     },
     {
       name: "test11",
       price: "511",
-      img:
-        "https://mdbootstrap.com/img/Photos/Horizontal/Work/4-col/img%20%2814%29.jpg"
+      img: "https://source.unsplash.com/random"
     },
     {
       name: "test7",
       price: "56",
-      img:
-        "https://mdbootstrap.com/img/Photos/Horizontal/Work/4-col/img%20%2814%29.jpg"
+      img: "https://source.unsplash.com/random"
     },
     {
       name: "test7",
       price: "56",
-      img:
-        "https://mdbootstrap.com/img/Photos/Horizontal/Work/4-col/img%20%2814%29.jpg"
+      img: "https://source.unsplash.com/random"
     },
     {
       name: "test7",
       price: "56",
-      img:
-        "https://mdbootstrap.com/img/Photos/Horizontal/Work/4-col/img%20%2814%29.jpg"
+      img: "https://source.unsplash.com/random"
     },
     {
       name: "test7",
       price: "56",
-      img:
-        "https://mdbootstrap.com/img/Photos/Horizontal/Work/4-col/img%20%2814%29.jpg"
+      img: "https://source.unsplash.com/random"
     },
     {
       name: "test7",
       price: "56",
-      img:
-        "https://mdbootstrap.com/img/Photos/Horizontal/Work/4-col/img%20%2814%29.jpg"
+      img: "https://source.unsplash.com/random"
     },
     {
       name: "test7",
       price: "56",
-      img:
-        "https://mdbootstrap.com/img/Photos/Horizontal/Work/4-col/img%20%2814%29.jpg"
+      img: "https://source.unsplash.com/random"
     },
     {
       name: "test7",
       price: "56",
-      img:
-        "https://mdbootstrap.com/img/Photos/Horizontal/Work/4-col/img%20%2814%29.jpg"
+      img: "https://source.unsplash.com/random"
     }
   ];
   pageOfItems: Array<any>;
