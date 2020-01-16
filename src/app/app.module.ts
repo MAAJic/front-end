@@ -14,6 +14,15 @@ import { CommentComponentComponent } from './comment-component/comment-component
 import { SingleCommentComponentComponent } from './single-comment-component/single-comment-component.component';
 import { LoginComponent } from './login/login.component';
 
+// const routes: Routes = [
+//   { path: 'home', component: HomeComponent },
+//   { path: 'event/:id', component: AboutComponent },
+//   { path: 'terms',        component: TermsComponent },
+//   { path: '',   redirectTo: '/home', pathMatch: 'full' },
+//   { path: '**', component: PageNotFoundComponent },
+
+// ];
+
 @NgModule({
   declarations: [
     AppComponent,

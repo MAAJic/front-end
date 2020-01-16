@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'app-main-image-event-banner',
@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./main-image-event-banner.component.scss']
 })
 export class MainImageEventBannerComponent implements OnInit {
-
+  @Input() banner: string
   constructor() { }
 
   ngOnInit() {
