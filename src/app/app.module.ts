@@ -13,6 +13,9 @@ import { MainImageEventBannerComponent } from './main-image-event-banner/main-im
 import { CommentComponentComponent } from './comment-component/comment-component.component';
 import { SingleCommentComponentComponent } from './single-comment-component/single-comment-component.component';
 import { LoginComponent } from './login/login.component';
+import {ConnectorService} from './connector.service.ts';
+import { HttpClientModule } from '@angular/common/http';
+
 
 // const routes: Routes = [
 //   { path: 'home', component: HomeComponent },
@@ -38,9 +41,10 @@ import { LoginComponent } from './login/login.component';
     BrowserAnimationsModule,
     MDBBootstrapModule.forRoot(),
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [ConnectorService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

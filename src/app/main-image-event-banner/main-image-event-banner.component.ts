@@ -1,4 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
+import {ConnectorService} from '../connector.service.ts';
+
 
 @Component({
   selector: 'app-main-image-event-banner',
