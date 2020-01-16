@@ -1,5 +1,4 @@
 import { Component, OnInit, Input } from '@angular/core';
-import {ConnectorService} from '../connector.service.ts';
 
 
 @Component({

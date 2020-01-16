@@ -13,7 +13,7 @@ import { MainImageEventBannerComponent } from './main-image-event-banner/main-im
 import { CommentComponentComponent } from './comment-component/comment-component.component';
 import { SingleCommentComponentComponent } from './single-comment-component/single-comment-component.component';
 import { LoginComponent } from './login/login.component';
-import {ConnectorService} from './connector.service.ts';
+import {ConnectorService} from './connector.service';
 import { HttpClientModule } from '@angular/common/http';
 
 

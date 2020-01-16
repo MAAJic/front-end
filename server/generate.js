@@ -1,9 +1,9 @@
 var faker = require('faker');
 
-var database = { events: []};
+var database = { event: []};
 
 for (var i = 1; i<= 300; i++) {
-  database.events.push({
+  database.event.push({
     eventId: i,
     eventCreator: faker.name.firstName() + ' ' + faker.name.lastName(),
     eventBanner: faker.image.imageUrl(),
