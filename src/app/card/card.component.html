@@ -1,0 +1,19 @@
+ <div [ngStyle]="{ 'background-image': 'url(' + event.url + ')'}" class=" myCard card-image mb-3 mx-2 h-90"
+   [routerLink]="['/event',event.id]">
+   <div class=" masque">
+     <h5 class="eventName">{{ event.title }}</h5>
+     <div class="centerText">
+       <div class="Details">
+         <div class='info'>
+           <p>Location : Tunis</p>
+           <p>Date : 25 janvier 2020</p>
+         </div>
+         <div>
+           <h3 class="card-title pt-2 price">
+             <strong>{{ event.id }}</strong>
+           </h3>
+         </div>
+       </div>
+     </div>
+   </div>
+ </div>

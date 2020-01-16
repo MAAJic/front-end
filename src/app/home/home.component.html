@@ -1,0 +1,13 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-6 myCol" *ngFor="let event of pageOfItems">
+      <app-card [event]="event"></app-card>
+    </div>
+  </div>
+
+
+  <div class="pages">
+    <jw-pagination class="body" [items]="events" [pageSize]="4" [maxPages]="3" (changePage)="onChangePage($event)">
+    </jw-pagination>
+  </div>
+</div>
