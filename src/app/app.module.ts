@@ -9,7 +9,7 @@ import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { NavBarComponent } from "./nav-bar/nav-bar.component";
 import { HomeComponent } from "./home/home.component";
 import { TestComponent } from "./test/test.component";
-import { CardComponent } from './card/card.component';
+import { CardComponent } from "./card/card.component";
 
 const appRoutes: Routes = [
   {
@@ -17,7 +17,7 @@ const appRoutes: Routes = [
     component: HomeComponent
   },
   {
-    path: "test",
+    path: "test/:id",
     component: TestComponent
   }
 ];

@@ -1,6 +1,7 @@
- <div [ngStyle]="{ 'background-image': 'url(' + event.img + ')'}" class=" myCard card-image mb-3 mx-2 h-90">
+ <div [ngStyle]="{ 'background-image': 'url(' + event.img + ')'}" class=" myCard card-image mb-3 mx-2 h-90"
+   [routerLink]="['/test',event.name]">
    <div class=" masque">
-     <h5 class="eventName">{{ event.name }}</h5>
+     <h5 class="eventName">{{ event.name.toUpperCase() }}</h5>
      <div class="centerText">
        <div class="Details">
          <div class='info'>
