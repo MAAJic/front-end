@@ -10,6 +10,8 @@ import { NavBarComponent } from "./nav-bar/nav-bar.component";
 import { HomeComponent } from "./home/home.component";
 import { TestComponent } from "./test/test.component";
 import { CardComponent } from "./card/card.component";
+import { HttpClientModule } from "@angular/common/http";
+import { FetchDataService } from "../app/services/fetch-data.service";
 
 const appRoutes: Routes = [
   {
@@ -17,7 +19,7 @@ const appRoutes: Routes = [
     component: HomeComponent
   },
   {
-    path: "test/:id",
+    path: "event/:id",
     component: TestComponent
   }
 ];
@@ -34,6 +36,7 @@ const appRoutes: Routes = [
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
+    HttpClientModule,
     RouterModule.forRoot(
       appRoutes,
       { enableTracing: true } // <-- debugging purposes only
@@ -42,7 +45,7 @@ const appRoutes: Routes = [
     ReactiveFormsModule,
     FormsModule
   ],
-  providers: [],
+  providers: [FetchDataService],
   bootstrap: [AppComponent]
 })
 export class AppModule {}

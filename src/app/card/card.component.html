@@ -1,7 +1,7 @@
- <div [ngStyle]="{ 'background-image': 'url(' + event.img + ')'}" class=" myCard card-image mb-3 mx-2 h-90"
-   [routerLink]="['/test',event.name]">
+ <div [ngStyle]="{ 'background-image': 'url(' + event.url + ')'}" class=" myCard card-image mb-3 mx-2 h-90"
+   [routerLink]="['/event',event.id]">
    <div class=" masque">
-     <h5 class="eventName">{{ event.name.toUpperCase() }}</h5>
+     <h5 class="eventName">{{ event.title }}</h5>
      <div class="centerText">
        <div class="Details">
          <div class='info'>
@@ -10,7 +10,7 @@
          </div>
          <div>
            <h3 class="card-title pt-2 price">
-             <strong>{{ event.price }}</strong>
+             <strong>{{ event.id }}</strong>
            </h3>
          </div>
        </div>
