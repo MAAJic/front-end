@@ -12,7 +12,7 @@ export class FetchDataService {
   events: any;
   user: Object;
   async getAllEvents() {
-    this.events = await this.http
+    await this.http
       .get("http://localhost:5000/api/events/all")
       .subscribe((eventData:any) => {
         this.events = eventData;
@@ -48,7 +48,7 @@ export class FetchDataService {
       uri = "/signup";
     }
     return this.http
-      .post(`http://127.0.0.1:5000/api/users/${uri}`, userInfo)
+      .post(`http://127.0.0.1:5000/api/users${uri}`, userInfo)
       .toPromise();
   }
 }
