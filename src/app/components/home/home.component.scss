@@ -1,0 +1,24 @@
+.body {
+  font-weight: 600;
+  font-size: 1.2rem;
+}
+
+.myCol {
+  padding: 10px 70px;
+}
+
+
+.container-fluid {
+  padding-top: 35px !important;
+}
+
+.pages {
+  margin: 0em;
+  padding: 0;
+  right: 50%;
+  transform: translateX(50%);
+  display: flex;
+  justify-content: center;
+  position: absolute;
+  bottom: 0;
+}
