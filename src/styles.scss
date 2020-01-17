@@ -1,1 +1,35 @@
 /* You can add global styles to this file, and also import other style files */
+#container {
+    background: #2980B9;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #2980B9, #6DD5FA, #6DD5FA, #2980B9);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #2980B9, #6DD5FA, #6DD5FA, #2980B9); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    
+    width: 98vw;
+    height: 98vh;
+
+display:  flex;
+justify-content: space-between;
+}
+
+#profile {
+    width:30%;
+}
+
+#carousels {
+    display: flex;
+    flex-direction: column;
+    height: 50%;
+    width:70%;
+}
+
+#carousel1 {
+    max-height: 45vh;
+} 
+
+#carousel2 {
+    max-height: 45vh;
+}
+ 
+h1 {
+    text-align: center;
+}
