@@ -11,6 +11,7 @@ export class FetchDataService {
   dataSource = this.data.asObservable();
   events: any;
   user: Object;
+
   async getAllEvents() {
     await this.http
       .get("http://localhost:5000/api/events/all")
