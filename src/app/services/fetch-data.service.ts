@@ -12,9 +12,9 @@ export class FetchDataService {
   events: any;
   user: Object;
   async getAllEvents() {
-    this.events = await this.http
+    await this.http
       .get("http://localhost:5000/api/events/all")
-      .subscribe(eventData => {
+      .subscribe((eventData: any) => {
         this.events = eventData;
         this.data.next(eventData);
       });
