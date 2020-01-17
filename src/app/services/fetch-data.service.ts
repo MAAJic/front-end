@@ -9,7 +9,7 @@ export class FetchDataService {
   constructor(private http: HttpClient) {}
   data = new Subject<Array<any>>();
   dataSource = this.data.asObservable();
-  events: dany;
+  events: any;
   user: Object;
   async getAllEvents() {
     this.events = await this.http
@@ -39,6 +39,16 @@ export class FetchDataService {
   async getUserInfo() {
     this.user = await this.http
       .get("http://localhost:5000/api/profile/user")
+      .toPromise();
+  }
+
+  authentification(userInfo) {
+    let uri = "/login";
+    if (userInfo.username) {
+      uri = "/signup";
+    }
+    return this.http
+      .post(`http://127.0.0.1:5000/api/users/${uri}`, userInfo)
       .toPromise();
   }
 }

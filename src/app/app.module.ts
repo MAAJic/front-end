@@ -15,6 +15,8 @@ import { HttpClientModule, HTTP_INTERCEPTORS } from "@angular/common/http";
 import { FetchDataService } from "../app/services/fetch-data.service";
 import { InfoComponent } from "./components/info/info.component";
 import { TokenInterceptorService } from "../app/services/token-interceptor.service";
+import { LoginComponent } from "../app/components/login/login.component";
+
 const appRoutes: Routes = [
   {
     path: "",
@@ -23,6 +25,14 @@ const appRoutes: Routes = [
   {
     path: "profile",
     component: ProfileComponent
+  },
+  {
+    path: "signup",
+    component: LoginComponent
+  },
+  {
+    path: "login",
+    component: LoginComponent
   },
   { path: "**", component: HomeComponent } // If no matching route found, go back to home route
 ];
@@ -36,6 +46,7 @@ const appRoutes: Routes = [
     CarouselsComponent,
     JwPaginationComponent,
     CardComponent,
+    LoginComponent,
     InfoComponent
   ],
   imports: [
