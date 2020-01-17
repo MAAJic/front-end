@@ -7,14 +7,14 @@ import { Subject } from "rxjs";
 })
 export class FetchDataService {
   constructor(private http: HttpClient) {}
-  data = new Subject<Array<any>>();
+  data = new Subject<Array<Object>>();
   dataSource = this.data.asObservable();
   events: any;
   user: Object;
   async getAllEvents() {
     this.events = await this.http
       .get("http://localhost:5000/api/events/all")
-      .subscribe(eventData => {
+      .subscribe((eventData:any) => {
         this.events = eventData;
         this.data.next(eventData);
       });
