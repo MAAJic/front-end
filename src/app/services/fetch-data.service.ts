@@ -10,7 +10,7 @@ export class FetchDataService {
   data = new Subject<Array<any>>();
   dataSource = this.data.asObservable();
   events: dany;
-
+  user: Object;
   async getAllEvents() {
     this.events = await this.http
       .get("http://localhost:5000/api/events/all")
@@ -33,13 +33,12 @@ export class FetchDataService {
     );
   }
 
-  getToken() {
-    return localStorage.getItem("token");
-  }
   storeToken(token) {
     localStorage.setItem("token", token);
   }
   async getUserInfo() {
-    await this.http.get("http://localhost:5000/api/profile/user").toPromise();
+    this.user = await this.http
+      .get("http://localhost:5000/api/profile/user")
+      .toPromise();
   }
 }

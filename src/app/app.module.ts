@@ -20,14 +20,11 @@ const appRoutes: Routes = [
     path: "",
     component: HomeComponent
   },
-  // {
-  //   path: "event/:id",
-  //   component: CarouselsComponent
-  // },
   {
     path: "profile",
     component: ProfileComponent
-  }
+  },
+  { path: "**", component: HomeComponent } // If no matching route found, go back to home route
 ];
 
 @NgModule({

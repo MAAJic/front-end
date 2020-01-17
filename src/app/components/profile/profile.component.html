@@ -1,21 +1,30 @@
-<div class="container-fluid">
-  <div class="row">
-    <div class="col-md-4">
-      <div style="padding: 70px">
-        <app-info></app-info>
-      </div>
-    </div>
-    <div class="col-md-6 offset-1">
-      <div>
-        <div class="carousel1">
-          <h1>Previous Events</h1>
-          <app-carousels></app-carousels>
+<ng-template [ngIf]="logged" [ngIfElse]="loading">
+
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-4">
+        <div style="padding: 70px">
+          <app-info></app-info>
         </div>
-        <div class="carousel1">
-          <h1>Upcoming Events</h1>
-          <app-carousels></app-carousels>
+      </div>
+      <div class="col-md-6 offset-1">
+        <div>
+          <div class="carousel1">
+            <h1>Previous Events</h1>
+            <app-carousels></app-carousels>
+          </div>
+          <div class="carousel1">
+            <h1>Upcoming Events</h1>
+            <app-carousels></app-carousels>
+          </div>
         </div>
       </div>
     </div>
   </div>
-</div>
+
+</ng-template>
+
+<ng-template #loading>
+  <div>You Need To Be Logged In To Look At Your Profile</div>
+  <a routerLink="/login" routerLinkActive="active">Go To Loggin!</a>
+</ng-template>

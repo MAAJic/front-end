@@ -9,9 +9,14 @@ import { FetchDataService } from "src/app/services/fetch-data.service";
 export class ProfileComponent implements OnInit {
   userInfo: Object;
   constructor(private fetchData: FetchDataService) {}
-
+  logged: Boolean;
   async ngOnInit() {
-    this.userInfo = this.fetchData.getUserInfo();
-    console.log(this.userInfo);
+    try {
+      await this.fetchData.getUserInfo();
+      this.userInfo = this.fetchData.user;
+      this.logged = true;
+    } catch (err) {
+      this.logged = false;
+    }
   }
 }
