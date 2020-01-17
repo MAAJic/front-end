@@ -16,20 +16,19 @@
       </li>
       <li class="nav-item">
         <a class="nav-link waves-light" mdbWavesEffect>
-          <mdb-icon fas icon="cog"></mdb-icon> Settings
+          <mdb-icon fas icon="cog"></mdb-icon> Add An Event
         </a>
       </li>
 
       <!-- Dropdown -->
       <li class="nav-item dropdown" dropdown>
-        <a dropdownToggle mdbWavesEffect type="button" class="nav-link dropdown-toggle waves-light" mdbWavesEffect
-          routerLink="/" routerLinkActive="active">
+        <a dropdownToggle mdbWavesEffect type="button" class="nav-link dropdown-toggle waves-light" mdbWavesEffect>
           <mdb-icon fas icon="user"></mdb-icon> Profile<span class="caret"></span>
         </a>
         <div *dropdownMenu class="dropdown-menu dropdown-menu-right dropdown dropdown-primary" role="menu">
-          <a class="dropdown-item waves-light" mdbWavesEffect>
+          <a class="dropdown-item waves-light" mdbWavesEffect routerLink="/profile/1" routerLinkActive="active">
             My account</a>
-          <a class="dropdown-item waves-light" mdbWavesEffect href="#">Log out</a>
+          <a class="dropdown-item waves-light" mdbWavesEffect href="#" (click)="logOut()">Log out</a>
         </div>
       </li>
 
@@ -40,3 +39,16 @@
 
 </mdb-navbar>
 <!--/.Navbar-->
+
+<mdb-navbar SideClass="navbar navbar-dark indigo">
+  <mdb-navbar-brand>
+    <form class="form-inline waves-light" mdbWavesEffect>
+      <div class="md-form my-0">
+        <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search"
+          (keydown)="search($event)">
+        <button mdbBtn color="success" outline="true" size="sm" class="my-0 waves-light" type="submit"
+          mdbWavesEffect>Search</button>
+      </div>
+    </form>
+  </mdb-navbar-brand>
+</mdb-navbar>
