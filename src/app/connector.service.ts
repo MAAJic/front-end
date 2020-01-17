@@ -7,11 +7,13 @@ import { HttpClient, HttpHeaders, HttpErrorResponse } from '@angular/common/http
   providedIn: 'root'
 })
 export class ConnectorService {
-  url: string = `http://localhost:3000/api/event/${window.location.pathname.split('/')[3]}`;
+  //url: string = `http://localhost:3000/api/events/${window.location.pathname.split('/')[3]}`;
+  Testurl: string = `http://localhost:3000/api/events`;
+
   headers = new HttpHeaders().set('Content-Type', 'application/json');
 
   constructor(private http: HttpClient) { }
   GetEventData () : Observable <any> {
-    return this.http.get(this.url, { headers: this.headers })
+    return this.http.get(this.Testurl, { headers: this.headers })
   }
 }
