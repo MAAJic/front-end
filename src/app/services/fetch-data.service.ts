@@ -1,6 +1,6 @@
 import { Injectable } from "@angular/core";
 import { HttpClient } from "@angular/common/http";
-import { Observable, Subject } from "rxjs";
+import { Subject } from "rxjs";
 
 @Injectable({
   providedIn: "root"
@@ -9,13 +9,13 @@ export class FetchDataService {
   constructor(private http: HttpClient) {}
   data = new Subject<Array<any>>();
   dataSource = this.data.asObservable();
-  events;
+  events: dany;
+
   async getAllEvents() {
     this.events = await this.http
       .get("http://localhost:5000/api/events/all")
       .subscribe(eventData => {
         this.events = eventData;
-        console.log(eventData);
         this.data.next(eventData);
       });
   }
@@ -32,5 +32,14 @@ export class FetchDataService {
       })
     );
   }
-  getUser() {}
+
+  getToken() {
+    return localStorage.getItem("token");
+  }
+  storeToken(token) {
+    localStorage.setItem("token", token);
+  }
+  async getUserInfo() {
+    await this.http.get("http://localhost:5000/api/profile/user").toPromise();
+  }
 }

@@ -10,10 +10,10 @@ export class NavBarComponent implements OnInit {
   constructor(private fetchData: FetchDataService) {}
 
   ngOnInit() {}
-  search($event) {
+  search($event: any) {
     this.fetchData.renderEvents($event.target.value);
   }
   logOut() {
-    localStorage.setItem("token", 0);
+    localStorage.setItem("token", "0");
   }
 }

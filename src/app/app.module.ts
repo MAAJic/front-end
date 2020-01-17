@@ -11,10 +11,10 @@ import { HomeComponent } from "./components/home/home.component";
 import { CardComponent } from "./components/card/card.component";
 import { CarouselsComponent } from "./components/carousels/carousels.component";
 import { ProfileComponent } from "./components/profile/profile.component";
-import { HttpClientModule } from "@angular/common/http";
+import { HttpClientModule, HTTP_INTERCEPTORS } from "@angular/common/http";
 import { FetchDataService } from "../app/services/fetch-data.service";
 import { InfoComponent } from "./components/info/info.component";
-
+import { TokenInterceptorService } from "../app/services/token-interceptor.service";
 const appRoutes: Routes = [
   {
     path: "",
@@ -25,7 +25,7 @@ const appRoutes: Routes = [
   //   component: CarouselsComponent
   // },
   {
-    path: "profile/:id",
+    path: "profile",
     component: ProfileComponent
   }
 ];
@@ -53,7 +53,14 @@ const appRoutes: Routes = [
     ReactiveFormsModule,
     FormsModule
   ],
-  providers: [FetchDataService],
+  providers: [
+    FetchDataService,
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: TokenInterceptorService,
+      multi: true
+    }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule {}

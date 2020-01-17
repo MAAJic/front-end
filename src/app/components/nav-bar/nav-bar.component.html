@@ -1,13 +1,13 @@
-<!--Navbar-->
+<!-- 
 <mdb-navbar SideClass="navbar navbar-expand-lg navbar-dark cyan" [containerInside]="false">
 
-  <!-- Navbar brand -->
+
   <mdb-navbar-brand><a class="navbar-brand" routerLink="/" routerLinkActive="active">Home</a></mdb-navbar-brand>
 
-  <!-- Collapsible content -->
+
   <links>
 
-    <!-- Links -->
+
     <ul class="navbar-nav ml-auto">
       <li class="nav-item active">
         <a class="nav-link waves-light" mdbWavesEffect routerLink="/" routerLinkActive="active">
@@ -20,7 +20,7 @@
         </a>
       </li>
 
-      <!-- Dropdown -->
+
       <li class="nav-item dropdown" dropdown>
         <a dropdownToggle mdbWavesEffect type="button" class="nav-link dropdown-toggle waves-light" mdbWavesEffect>
           <mdb-icon fas icon="user"></mdb-icon> Profile<span class="caret"></span>
@@ -33,22 +33,62 @@
       </li>
 
     </ul>
-    <!-- Links -->
+ 
   </links>
-  <!-- Collapsible content -->
 
-</mdb-navbar>
-<!--/.Navbar-->
 
-<mdb-navbar SideClass="navbar navbar-dark indigo">
+</mdb-navbar> -->
+<!-- <div class="pos-f-t">
+  <div class="collapse" id="navbarToggleExternalContent">
+    <div class="bg-dark p-4">
+      <h4 class="text-white">Collapsed content</h4>
+      <span class="text-muted">Toggleable via the navbar brand.</span>
+    </div>
+  </div> -->
+<nav class="navbar navbar-dark bg-dark" style="font-weight: 600; font-size: 1.3rem;">
+  <mdb-navbar-brand><a class="navbar-brand" routerLink="/" routerLinkActive="active">Home</a></mdb-navbar-brand>
+  <ul class="navbar-nav ml-auto">
+    <li class="nav-item">
+      <a class="nav-link waves-light" mdbWavesEffect>
+        <i class="fa fa-plus"></i> Add An Event
+      </a>
+    </li>
+    <li class="nav-item dropdown" dropdown>
+      <a dropdownToggle mdbWavesEffect type="button" class="nav-link dropdown-toggle waves-light" mdbWavesEffect>
+        <mdb-icon fas icon="user"></mdb-icon> Profile<span class="caret"></span>
+      </a>
+      <div *dropdownMenu class="dropdown-menu dropdown-menu-right dropdown dropdown-primary" role="menu">
+        <a class="dropdown-item waves-light" mdbWavesEffect routerLink="/profile" routerLinkActive="active">
+          My account</a>
+        <a class="dropdown-item waves-light" mdbWavesEffect href="#" (click)="logOut()">Log out</a>
+      </div>
+    </li>
+  </ul>
+  <form class="form-inline">
+    <div class="md-form my-0">
+      <input class="form-control mr-sm-2 white-text" type="text" placeholder="Search" aria-label="Search"
+        (keydown)="search($event)">
+    </div>
+  </form>
+
+</nav>
+<!-- </div> -->
+
+
+
+<!-- Links -->
+
+
+
+<!-- <mdb-navbar SideClass="navbar navbar-dark indigo">
   <mdb-navbar-brand>
     <form class="form-inline waves-light" mdbWavesEffect>
       <div class="md-form my-0">
         <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search"
-          (keydown)="search($event)">
+          >
         <button mdbBtn color="success" outline="true" size="sm" class="my-0 waves-light" type="submit"
           mdbWavesEffect>Search</button>
       </div>
     </form>
   </mdb-navbar-brand>
-</mdb-navbar>
+</mdb-navbar> -->
