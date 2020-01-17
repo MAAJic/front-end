@@ -6,22 +6,25 @@ import { AppComponent } from "./app.component";
 import { JwPaginationComponent } from "jw-angular-pagination";
 import { MDBBootstrapModule } from "angular-bootstrap-md";
 import { FormsModule, ReactiveFormsModule } from "@angular/forms";
-import { NavBarComponent } from "./nav-bar/nav-bar.component";
-import { HomeComponent } from "./home/home.component";
-import { TestComponent } from "./test/test.component";
-import { CardComponent } from "./card/card.component";
-import { HttpClientModule } from "@angular/common/http";
+import { NavBarComponent } from "./components/nav-bar/nav-bar.component";
+import { HomeComponent } from "./components/home/home.component";
+import { CardComponent } from "./components/card/card.component";
+import { CarouselsComponent } from "./components/carousels/carousels.component";
+import { ProfileComponent } from "./components/profile/profile.component";
+import { HttpClientModule, HTTP_INTERCEPTORS } from "@angular/common/http";
 import { FetchDataService } from "../app/services/fetch-data.service";
-
+import { InfoComponent } from "./components/info/info.component";
+import { TokenInterceptorService } from "../app/services/token-interceptor.service";
 const appRoutes: Routes = [
   {
     path: "",
     component: HomeComponent
   },
   {
-    path: "event/:id",
-    component: TestComponent
-  }
+    path: "profile",
+    component: ProfileComponent
+  },
+  { path: "**", component: HomeComponent } // If no matching route found, go back to home route
 ];
 
 @NgModule({
@@ -29,9 +32,11 @@ const appRoutes: Routes = [
     AppComponent,
     NavBarComponent,
     HomeComponent,
-    TestComponent,
+    ProfileComponent,
+    CarouselsComponent,
     JwPaginationComponent,
-    CardComponent
+    CardComponent,
+    InfoComponent
   ],
   imports: [
     BrowserModule,
@@ -45,7 +50,14 @@ const appRoutes: Routes = [
     ReactiveFormsModule,
     FormsModule
   ],
-  providers: [FetchDataService],
+  providers: [
+    FetchDataService,
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: TokenInterceptorService,
+      multi: true
+    }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule {}
