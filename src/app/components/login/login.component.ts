@@ -12,15 +12,15 @@ export class LoginComponent implements OnInit {
   constructor(private fetchData: FetchDataService, private router: Router) {}
   ngOnInit() {}
   async logIn(form: NgForm) {
-    let data = await this.fetchData.authentification(form.value);
+    let data: any = await this.fetchData.authentification(form.value);
     if (data.found) {
       this.fetchData.storeToken(data.token);
       this.router.navigate(["/"]);
     }
   }
   async signUp(form: NgForm) {
-    let data = await this.fetchData.authentification(form.value);
-    if (data.found) {
+    let data: any = await this.fetchData.authentification(form.value);
+    if (data.saved) {
       this.fetchData.storeToken(data.token);
       this.router.navigate(["/"]);
     }
