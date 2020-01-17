@@ -1,8 +1,8 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { NewEvent} from './eventClass/event';
-import { map } from 'rxjs/operators';
 
-import {ConnectorService} from '../connector.service'
+//could make the event variable adhere to the NewEvent interface
+
 
 @Component({
   selector: 'app-event-details-component',
@@ -13,17 +13,12 @@ export class EventDetailsComponentComponent implements OnInit {
 
   event: any;
 
-  constructor( private http : ConnectorService) {}
+  constructor() {}
 
   ngOnInit() {
     this.event = Event2
 
-    console.log(Event)
-
-    // this.http.GetEventData().pipe(map(res => {
-    //   console.log(res.json())
-    //
-    // }));
+    console.log(Event2)
 
 
 
@@ -49,7 +44,3 @@ var Event2 = {
     "location": "ariana",
     "__v": 0
 }
-
-    // .subscribe((data)=>{
-    //   this.event = data
-    // });

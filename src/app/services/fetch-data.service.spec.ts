@@ -1,12 +1,12 @@
 import { TestBed } from '@angular/core/testing';
 
-import { ConnectorService } from './connector.service';
+import { FetchDataService } from './fetch-data.service';
 
-describe('ConnectorService', () => {
+describe('FetchDataService', () => {
   beforeEach(() => TestBed.configureTestingModule({}));
 
   it('should be created', () => {
-    const service: ConnectorService = TestBed.get(ConnectorService);
+    const service: FetchDataService = TestBed.get(FetchDataService);
     expect(service).toBeTruthy();
   });
 });
