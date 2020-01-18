@@ -2,6 +2,8 @@ import { Injectable } from "@angular/core";
 import { HttpClient } from "@angular/common/http";
 import { Subject } from "rxjs";
 
+import { CreatEventComponent } from './../components/creat-event/creat-event.component';
+
 @Injectable({
   providedIn: "root"
 })
@@ -50,5 +52,21 @@ export class FetchDataService {
     return this.http
       .post(`http://127.0.0.1:5000/api/users${uri}`, userInfo)
       .toPromise();
+  }
+
+  creatEvent(eventData) {
+    return this.http
+      .post("http://localhost:5000/api/events/create", eventData)
+      .subscribe(data => {
+      });
+  }
+
+  uploadImageEvent(image){
+    return this.http.post('http://localhost:5000/api/events/upload-img', image)
+    .subscribe(files => {
+      let file = files[0];
+      CreatEventComponent.uploadedFile = file;
+      return file;
+    })
   }
 }
