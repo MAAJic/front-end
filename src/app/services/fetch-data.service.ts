@@ -16,7 +16,7 @@ export class FetchDataService {
   async getAllEvents() {
     await this.http
       .get("http://localhost:5000/api/events/all")
-      .subscribe((eventData:any) => {
+      .subscribe((eventData: any) => {
         this.events = eventData;
         this.data.next(eventData);
       });
