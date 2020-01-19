@@ -16,11 +16,8 @@ import { FetchDataService } from "../app/services/fetch-data.service";
 import { InfoComponent } from "./components/info/info.component";
 import { TokenInterceptorService } from "../app/services/token-interceptor.service";
 import { LoginComponent } from "../app/components/login/login.component";
-import { EventDetailsComponentComponent } from "./components/event/event-details-component/event-details-component.component";
-import { EventCreatorDetailsComponent } from "./components/event/event-creator-details/event-creator-details.component";
-import { MainImageEventBannerComponent } from "./components/event/main-image-event-banner/main-image-event-banner.component";
-import { CommentComponentComponent } from "./components/event/comment-component/comment-component.component";
-import { SingleCommentComponentComponent } from "./components/event/single-comment-component/single-comment-component.component";
+import { CreatEventComponent } from '../app/components/creat-event/creat-event.component';
+import { FileInputComponent } from '../app/components/file-input-component/file-input-component.component';
 
 const appRoutes: Routes = [
   {
@@ -36,12 +33,12 @@ const appRoutes: Routes = [
     component: LoginComponent
   },
   {
-    path: "event/:id",
-    component: EventDetailsComponentComponent
-  },
-  {
     path: "login",
     component: LoginComponent
+  },
+  {
+    path: "events/add",
+    component: CreatEventComponent
   },
   { path: "**", component: HomeComponent } // If no matching route found, go back to home route
 ];
@@ -49,18 +46,15 @@ const appRoutes: Routes = [
 @NgModule({
   declarations: [
     AppComponent,
-    EventDetailsComponentComponent,
-    EventCreatorDetailsComponent,
-    MainImageEventBannerComponent,
-    CommentComponentComponent,
-    SingleCommentComponentComponent,
-    LoginComponent,
+    CreatEventComponent,
+    FileInputComponent,
     NavBarComponent,
     HomeComponent,
     ProfileComponent,
     CarouselsComponent,
     JwPaginationComponent,
     CardComponent,
+    LoginComponent,
     InfoComponent
   ],
   imports: [
