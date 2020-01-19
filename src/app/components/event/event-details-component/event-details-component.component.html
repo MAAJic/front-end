@@ -11,11 +11,12 @@
         <h2 class="card-title h1-responsive pt-3 mb-5 font-bold"><strong>{{event.eventName.toUpperCase()}}</strong></h2>
         <p class="mx-5 mb-5">{{event.description}}</p>
       </div>
-      <app-comment-component [info]="{comments : event.comments, userInfo : userInfo}"></app-comment-component>
+      <app-comment-component [info]="{comments : event.comments, userInfo : userInfo}" (comment)="getComment($event)">
+      </app-comment-component>
       <section class="my-5">
         <div class="card-header border-0 font-weight-bold">{{event.comments.length}} comments</div>
         <div class="media d-block d-md-flex mt-3" *ngFor="let comment of event.comments">
-          <app-single-comment-component [comment]='comment'></app-single-comment-component>
+          <app-single-comment-component [comment]='comment' [userInput]="userInput"></app-single-comment-component>
         </div>
       </section>
     </div>

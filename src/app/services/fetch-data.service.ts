@@ -13,10 +13,13 @@ export class FetchDataService {
   dataSource = this.data.asObservable();
   events: any;
   user: Object;
+
+  comments = new Subject<any>();
+  comment = this.comments.asObservable();
   async getAllEvents() {
     await this.http
       .get("http://localhost:5000/api/events/all")
-      .subscribe((eventData:any) => {
+      .subscribe((eventData: any) => {
         this.events = eventData;
         this.data.next(eventData);
       });
@@ -79,5 +82,11 @@ export class FetchDataService {
         CreatEventComponent.uploadedFile = file;
         return file;
       });
+  }
+  addAcomment(content, id) {
+    console.log({ content, id });
+    this.http
+      .post("http://localhost:5000/api/event/comments/add", { content, id })
+      .subscribe(data => console.log(data));
   }
 }

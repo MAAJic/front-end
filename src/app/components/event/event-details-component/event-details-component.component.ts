@@ -12,6 +12,7 @@ import { FetchDataService } from "src/app/services/fetch-data.service";
 export class EventDetailsComponentComponent implements OnInit {
   event: any;
   userInfo: Object;
+  userInput: any;
   constructor(private fetcher: FetchDataService) {}
 
   async ngOnInit() {
@@ -30,5 +31,19 @@ export class EventDetailsComponentComponent implements OnInit {
         };
       }
     }
+
+    this.fetcher.comment.subscribe(data => {
+      const userInput = {
+        author: data.author,
+        imgUrl: data.imgUrl,
+        content: data.content.value
+      };
+      this.fetcher.addAcomment(data.content.value, eventID);
+      this.event.comments.push(userInput);
+    });
+  }
+
+  getComment(comment: any) {
+    this.userInput = comment.value;
   }
 }
