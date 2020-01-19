@@ -11,17 +11,24 @@ import { FetchDataService } from "src/app/services/fetch-data.service";
 
 export class CreatEventComponent implements OnInit {
   static uploadedFile: any = null;
+  location: string = null;
   constructor(private fetchData: FetchDataService) {}
 
   ngOnInit() {}
 
+  onLocation(location: string) {
+    this.location = location;
+  }
+
   async onSubmit(form: NgForm) {
     if(CreatEventComponent.uploadedFile){
-      await this.fetchData.creatEvent({...form.value, _id: CreatEventComponent.uploadedFile.filename.substring(0,CreatEventComponent.uploadedFile.filename.indexOf('.')), imgUrl: 'http://localhost:5000/' + CreatEventComponent.uploadedFile.path});
+      await this.fetchData.creatEvent({...form.value, location: this.location, _id: CreatEventComponent.uploadedFile.filename.substring(0,CreatEventComponent.uploadedFile.filename.indexOf('.')), imgUrl: 'http://localhost:5000/' + CreatEventComponent.uploadedFile.path});
     } else {
-      await this.fetchData.creatEvent(form.value);      
+      await this.fetchData.creatEvent({...form.value, location: this.location});      
     }
+    console.log({...form.value, location: this.location});
     form.reset();
+    CreatEventComponent.uploadedFile = null;
   }
 }
 

@@ -1,0 +1,19 @@
+<div class="card-header border-0 font-weight-bold d-flex justify-content-between" style="font-size: 2.5rem;">
+  <p class="mr-4 mb-0">Event Creator</p>
+</div>
+<img class="avatar card-img-100 d-flex z-depth-1 mr-3 rounded-circle" [src]="creator.imgUrl"
+  alt="Generic placeholder image">
+<div class="media mt-4 px-1">
+  <div class="media-body">
+    <h5 class="font-weight-bold mt-0" style="font-size: 2.1rem;">
+      {{creator.username.toUpperCase()}}
+    </h5>
+    <p><i class="fas fa-quote-left"></i> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eos, adipisci</p>
+  </div>
+</div>
+<div class="card-header border-0 font-weight-bold d-flex justify-content-between">
+  <ul class="list-unstyled mb-0">
+    <li class="list-inline-item"><a class="mr-3" routerLink="/" routerLinkActive=" active"><i
+          class="fas fa-user mr-1"></i>See profile</a></li>
+  </ul>
+</div>
