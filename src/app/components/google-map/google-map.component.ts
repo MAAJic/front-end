@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input, EventEmitter, Output } from '@angular/core';
 
 @Component({
   selector: 'app-google-map',
@@ -18,6 +18,21 @@ export class GoogleMapComponent implements OnInit {
     minZoom: 8,
   }
   marker = null;
+  @Output() locationed = new EventEmitter<any>();
+  // mapLocation = EventEmitter;
+
+  // location = null;
+
+  // @Input()
+  // get mapLocation() {
+  //   return this.location;
+  // }
+
+  // set mapLocation(value) {
+  //   this.location = value;
+  // }
+
+
 
   ngOnInit() {
     navigator.geolocation.getCurrentPosition(position => {
@@ -38,8 +53,15 @@ export class GoogleMapComponent implements OnInit {
         },
         title: 'Marker title ',
         options: { animation: google.maps.Animation.BOUNCE },
-      }
-    })
+      };
+      let location = {
+        latitude: lat,
+        longitude: lng
+      } 
+      // console.log(this.mapLocation)
+      this.locationed.emit(location);
+        // this.location = `${lat}, ${lng}`
+      });
   }
 
   click(event: google.maps.MouseEvent) {
@@ -57,5 +79,12 @@ export class GoogleMapComponent implements OnInit {
       title: 'Marker title ',
       options: { animation: google.maps.Animation.BOUNCE },
     }
+    let location = {
+      latitude: lat,
+      longitude: lng
+    } 
+    // console.log(this.mapLocation)
+    this.locationed.emit(location);
   }
+
 }

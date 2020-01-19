@@ -16,10 +16,16 @@ planId: String,
 comments: [ Object ],
 rating: [ String ] -->
 <!-- Default form contact -->
+<p class="h4 mb-4">Create Event</p>
+<div class="container">
+
+<app-google-map 
+      
+      (locationed)="onLocation($event)"
+></app-google-map>
+
 <div class="container">
   <form class="text-center border border-light p-5" #creatEvent= "ngForm"  (ngSubmit)="onSubmit(creatEvent)">
-
-    <p class="h4 mb-4">Create Event</p>
 
     <!-- Name -->
     <input type="text" id="defaultContactFormName" mdbInput
@@ -49,7 +55,7 @@ rating: [ String ] -->
 
     <label for="input">OR</label>
     <br/>
-    
+
     <app-file-input-component></app-file-input-component>
 
     <!-- Category -->
@@ -61,6 +67,7 @@ rating: [ String ] -->
     <button mdbBtn color="info" outline="true" block="true" class="z-depth-0 my-4 waves-effect"
       mdbWavesEffect type="submit" >CREATE</button>
 
-  </form>
+  </form> 
 
+</div>
 </div>
