@@ -1,14 +1,14 @@
 <ng-template [ngIf]="logged" [ngIfElse]="loading">
   <div class="container-fluid">
     <div class="row">
-      <div class="col-md-4">
-        <div style="padding: 70px">
+      <div class="col-md-4 profile">
+        <div class="profile">
           <app-info [userInfo]="userInfo"></app-info>
         </div>
       </div>
-      <div class="col-md-6 offset-1">
+      <div class="col-md-8">
         <div>
-          <div class="carousel1">
+          <div class=" carousel1">
             <h1>Previous Events</h1>
             <app-carousels></app-carousels>
           </div>

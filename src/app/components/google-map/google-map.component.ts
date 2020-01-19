@@ -1,24 +1,24 @@
-import { Component, OnInit, Input, EventEmitter, Output } from '@angular/core';
+import { Component, OnInit, Input, EventEmitter, Output } from "@angular/core";
 
 @Component({
-  selector: 'app-google-map',
-  templateUrl: './google-map.component.html',
-  styleUrls: ['./google-map.component.scss']
+  selector: "app-google-map",
+  templateUrl: "./google-map.component.html",
+  styleUrls: ["./google-map.component.scss"]
 })
-
 export class GoogleMapComponent implements OnInit {
-  zoom = 13
-  center: google.maps.LatLngLiteral
+  zoom = 13;
+  center: google.maps.LatLngLiteral;
   options: google.maps.MapOptions = {
     // mapTypeId: 'hybrid',
     zoomControl: true,
     scrollwheel: false,
     disableDoubleClickZoom: true,
     maxZoom: 20,
-    minZoom: 8,
-  }
+    minZoom: 8
+  };
   marker = null;
   @Output() locationed = new EventEmitter<any>();
+  @Input() address: any;
   // mapLocation = EventEmitter;
 
   // location = null;
@@ -32,33 +32,59 @@ export class GoogleMapComponent implements OnInit {
   //   this.location = value;
   // }
 
-
-
   ngOnInit() {
-    navigator.geolocation.getCurrentPosition(position => {
-      let lat= position.coords.latitude;
-      let lng= position.coords.longitude;
+    console.log(this);
+    if (this.address) {
+      let lat = this.address[1];
+      let lng = this.address[0];
+      console.log(this.address);
       this.center = {
         lat,
-        lng,
+        lng
       };
       this.marker = {
         position: {
           lat,
-          lng,
+          lng
         },
         label: {
-          color: 'red',
-          text: 'Marker label ',
+          color: "red",
+          text: "Marker label "
         },
-        title: 'Marker title ',
-        options: { animation: google.maps.Animation.BOUNCE },
+        title: "Marker title ",
+        options: { animation: google.maps.Animation.BOUNCE }
       };
-      let location = {
-        coordinates: [lat, lng]
-      }
-      // console.log(this.mapLocation)
-      this.locationed.emit(location);
+      // let location = {
+      //   coordinates: [lat, lng]
+      // };
+      // // console.log(this.mapLocation)
+      // this.locationed.emit(location);
+      // this.location = `${lat}, ${lng}`;
+    } else
+      navigator.geolocation.getCurrentPosition(position => {
+        let lat = position.coords.latitude;
+        let lng = position.coords.longitude;
+        this.center = {
+          lat,
+          lng
+        };
+        this.marker = {
+          position: {
+            lat,
+            lng
+          },
+          label: {
+            color: "red",
+            text: "Marker label "
+          },
+          title: "Marker title ",
+          options: { animation: google.maps.Animation.BOUNCE }
+        };
+        let location = {
+          coordinates: [lat, lng]
+        };
+        // console.log(this.mapLocation)
+        this.locationed.emit(location);
         // this.location = `${lat}, ${lng}`
       });
   }
@@ -66,23 +92,23 @@ export class GoogleMapComponent implements OnInit {
   click(event: google.maps.MouseEvent) {
     let lat = event.latLng.lat();
     let lng = event.latLng.lng();
+    console.log(lat, typeof lat);
     this.marker = {
       position: {
         lat,
-        lng,
+        lng
       },
       label: {
-        color: 'red',
-        text: 'Marker label ',
+        color: "red",
+        text: "Marker label "
       },
-      title: 'Marker title ',
-      options: { animation: google.maps.Animation.BOUNCE },
-    }
+      title: "Marker title ",
+      options: { animation: google.maps.Animation.BOUNCE }
+    };
     let location = {
       coordinates: [lat, lng]
-    }
+    };
     // console.log(this.mapLocation)
     this.locationed.emit(location);
   }
-
 }

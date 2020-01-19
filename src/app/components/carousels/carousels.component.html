@@ -1,8 +1,8 @@
-<mdb-carousel class="carousel slide carousel-fade " [animation]="'fade'">
-  <mdb-carousel-item class="crl" *ngFor="let event of events; let indx = index">
+<mdb-carousel class="carousel slide carousel-fade  all" [animation]="'fade'">
+  <mdb-carousel-item class="crl all" *ngFor="let event of events; let indx = index">
     <h3>{{event.title}} </h3>
     <div id="mask">
-      <img class="d-block w-100" src="{{ event.image }}" alt="First slide">
+      <img class="d-block" src="{{ event.image }}" alt="First slide">
     </div>
   </mdb-carousel-item>
 </mdb-carousel>
