@@ -18,9 +18,11 @@ import { TokenInterceptorService } from "../app/services/token-interceptor.servi
 import { EventDetailsComponentComponent } from './components/event/event-details-component/event-details-component.component';
 import { EventCreatorDetailsComponent } from './components/event/event-creator-details/event-creator-details.component';
 import { MainImageEventBannerComponent } from './components/event/main-image-event-banner/main-image-event-banner.component';
-import { CommentComponentComponent } from './comment-component/comment-component.component';
+import { CommentComponentComponent } from './components/event/comment-component/comment-component.component';
 import { SingleCommentComponentComponent } from './components/event/single-comment-component/single-comment-component.component';
 import { LoginComponent } from './components/login/login.component';
+import { StarRatingComponent } from './components/starRating/star-rating/star-rating.component';
+import { RatingModule } from 'ngx-bootstrap/rating';
 
 
 const appRoutes: Routes = [
@@ -59,7 +61,8 @@ const appRoutes: Routes = [
     JwPaginationComponent,
     CardComponent,
     LoginComponent,
-    InfoComponent
+    InfoComponent,
+    StarRatingComponent
   ],
   imports: [
     BrowserModule,
@@ -68,7 +71,8 @@ const appRoutes: Routes = [
     RouterModule.forRoot(appRoutes),
     MDBBootstrapModule.forRoot(),
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    RatingModule.forRoot()
   ],
 
   providers: [
