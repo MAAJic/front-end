@@ -55,9 +55,8 @@ export class GoogleMapComponent implements OnInit {
         options: { animation: google.maps.Animation.BOUNCE },
       };
       let location = {
-        latitude: lat,
-        longitude: lng
-      } 
+        coordinates: [lat, lng]
+      }
       // console.log(this.mapLocation)
       this.locationed.emit(location);
         // this.location = `${lat}, ${lng}`
@@ -80,9 +79,8 @@ export class GoogleMapComponent implements OnInit {
       options: { animation: google.maps.Animation.BOUNCE },
     }
     let location = {
-      latitude: lat,
-      longitude: lng
-    } 
+      coordinates: [lat, lng]
+    }
     // console.log(this.mapLocation)
     this.locationed.emit(location);
   }

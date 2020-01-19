@@ -5,7 +5,8 @@ import {
   HttpHandler,
   HttpRequest
 } from "@angular/common/http";
-import { Observable } from "rxjs";
+import {Observable} from "rxjs";
+
 @Injectable({
   providedIn: "root"
 })
