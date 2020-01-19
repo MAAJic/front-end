@@ -1,5 +1,5 @@
 <div>
-  <rating [max]="10" [(ngModel)]="y"  (ngModelChange)="onChange(y)" [customTemplate]="tt"></rating>
+  <rating [max]="5" [(ngModel)]="y" (ngModelChange)="onChange(y)" [customTemplate]="tt"></rating>
   <ng-template #tt let-i="index" let-v="value">
     <button class="btn btn-{{i < v ? 'warning' : 'default'}}">
       {{i < v ? '&#9733;' : '&#9734;'}}
