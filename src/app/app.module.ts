@@ -15,8 +15,8 @@ import { HttpClientModule, HTTP_INTERCEPTORS } from "@angular/common/http";
 import { FetchDataService } from "../app/services/fetch-data.service";
 import { InfoComponent } from "./components/info/info.component";
 import { TokenInterceptorService } from "../app/services/token-interceptor.service";
-import { StarRatingComponent } from './components/starRating/star-rating/star-rating.component';
-import { RatingModule } from 'ngx-bootstrap/rating';
+import { StarRatingComponent } from "./components/starRating/star-rating/star-rating.component";
+import { RatingModule } from "ngx-bootstrap/rating";
 import { LoginComponent } from "../app/components/login/login.component";
 import { CreatEventComponent } from "../app/components/creat-event/creat-event.component";
 import { FileInputComponent } from "../app/components/file-input-component/file-input-component.component";
@@ -67,7 +67,7 @@ const appRoutes: Routes = [
     CardComponent,
     LoginComponent,
     InfoComponent,
-    StarRatingComponent
+    StarRatingComponent,
     EventDetailsComponentComponent,
     EventCreatorDetailsComponent,
     MainImageEventBannerComponent,
