@@ -16,4 +16,5 @@ export class CommentComponentComponent implements OnInit {
     console.log(form.value);
     console.log(document.getElementById("textarea"));
   }
+
 }
