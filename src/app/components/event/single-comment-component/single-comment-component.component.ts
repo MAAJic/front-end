@@ -1,16 +1,14 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input } from "@angular/core";
 
 @Component({
-  selector: 'app-single-comment-component',
-  templateUrl: './single-comment-component.component.html',
-  styleUrls: ['./single-comment-component.component.scss']
+  selector: "app-single-comment-component",
+  templateUrl: "./single-comment-component.component.html",
+  styleUrls: ["./single-comment-component.component.scss"]
 })
 export class SingleCommentComponentComponent implements OnInit {
-  @Input() comment: { author: string, image: string, content:string };
+  @Input() comment: { author: string; image: string; content: string };
 
-  constructor() { }
+  constructor() {}
 
-  ngOnInit() {
-  }
-
+  ngOnInit() {}
 }

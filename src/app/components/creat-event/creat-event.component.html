@@ -1,0 +1,67 @@
+<!-- _id: {
+  type: mongoose.Schema.ObjectId,
+  required: true
+},
+eventName: String,
+description: String,
+date: String,
+imgUrl: [ Object ],
+videos: [ String ],
+category: String,
+cost: String,
+planId: String,
+organizerId: String,
+planId: String,
+comments: [ Object ],
+rating: [ String ] -->
+<!-- Default form contact -->
+<div class="container">
+  <form class="text-center border border-light p-5" #creatEvent="ngForm" (ngSubmit)="onSubmit(creatEvent)">
+
+    <p class="h4 mb-4">Create Event</p>
+
+    <!-- Name -->
+    <input type="text" id="defaultContactFormName" mdbInput class="form-control mb-4" placeholder="Event Name"
+      name="eventName" ngModel>
+
+    <!-- Description -->
+    <div class="form-group">
+      <textarea class="form-control rounded-0" mdbInput id="exampleFormControlTextarea2" rows="3"
+        placeholder="Description" name="description" ngModel></textarea>
+    </div>
+
+    <!-- Date -->
+    <div class="md-form">
+      <input type="date" id="input" class="form-control" mdbInput name="date" ngModel>
+      <label for="input">Choose your date</label>
+    </div>
+
+    <div>
+      <!-- Default input -->
+      <input mdbInput type="text" class="form-control" placeholder="Cost" name="cost" ngModel>
+    </div>
+
+
+    <!-- Image -->
+    <input type="text" id="defaultContactFormName" mdbInput class="form-control mb-4" placeholder="Image URL"
+      name="imgUrl" ngModel>
+
+    <label for="input">OR</label>
+    <br />
+
+    <app-file-input-component></app-file-input-component>
+    <br>
+    <!-- Category -->
+    <label>Category</label>
+    <input type="text" id="defaultContactFormName" mdbInput class="form-control mb-4" placeholder="Category"
+      name="category" ngModel>
+    <label>Location of the event</label>
+    <input type="text" id="defaultContactFormName" mdbInput class="form-control mb-4"
+      placeholder="Location of the event" name="location" ngModel>
+    <!-- Send button -->
+    <button mdbBtn color="info" outline="true" block="true" class="z-depth-0 my-4 waves-effect" mdbWavesEffect
+      type="submit">CREATE</button>
+
+  </form>
+
+</div>

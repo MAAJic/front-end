@@ -15,15 +15,16 @@ import { HttpClientModule, HTTP_INTERCEPTORS } from "@angular/common/http";
 import { FetchDataService } from "../app/services/fetch-data.service";
 import { InfoComponent } from "./components/info/info.component";
 import { TokenInterceptorService } from "../app/services/token-interceptor.service";
-import { EventDetailsComponentComponent } from './components/event/event-details-component/event-details-component.component';
-import { EventCreatorDetailsComponent } from './components/event/event-creator-details/event-creator-details.component';
-import { MainImageEventBannerComponent } from './components/event/main-image-event-banner/main-image-event-banner.component';
-import { CommentComponentComponent } from './components/event/comment-component/comment-component.component';
-import { SingleCommentComponentComponent } from './components/event/single-comment-component/single-comment-component.component';
-import { LoginComponent } from './components/login/login.component';
 import { StarRatingComponent } from './components/starRating/star-rating/star-rating.component';
 import { RatingModule } from 'ngx-bootstrap/rating';
-
+import { LoginComponent } from "../app/components/login/login.component";
+import { CreatEventComponent } from "../app/components/creat-event/creat-event.component";
+import { FileInputComponent } from "../app/components/file-input-component/file-input-component.component";
+import { EventDetailsComponentComponent } from "./components/event/event-details-component/event-details-component.component";
+import { EventCreatorDetailsComponent } from "./components/event/event-creator-details/event-creator-details.component";
+import { MainImageEventBannerComponent } from "./components/event/main-image-event-banner/main-image-event-banner.component";
+import { CommentComponentComponent } from "./components/event/comment-component/comment-component.component";
+import { SingleCommentComponentComponent } from "./components/event/single-comment-component/single-comment-component.component";
 
 const appRoutes: Routes = [
   {
@@ -42,18 +43,22 @@ const appRoutes: Routes = [
     path: "login",
     component: LoginComponent
   },
+  {
+    path: "event/:id",
+    component: EventDetailsComponentComponent
+  },
+  {
+    path: "events/add",
+    component: CreatEventComponent
+  },
   { path: "**", component: HomeComponent } // If no matching route found, go back to home route
 ];
 
 @NgModule({
   declarations: [
     AppComponent,
-    EventDetailsComponentComponent,
-    EventCreatorDetailsComponent,
-    MainImageEventBannerComponent,
-    CommentComponentComponent,
-    SingleCommentComponentComponent,
-    LoginComponent,
+    CreatEventComponent,
+    FileInputComponent,
     NavBarComponent,
     HomeComponent,
     ProfileComponent,
@@ -63,6 +68,12 @@ const appRoutes: Routes = [
     LoginComponent,
     InfoComponent,
     StarRatingComponent
+    EventDetailsComponentComponent,
+    EventCreatorDetailsComponent,
+    MainImageEventBannerComponent,
+    CommentComponentComponent,
+    SingleCommentComponentComponent,
+    InfoComponent
   ],
   imports: [
     BrowserModule,
