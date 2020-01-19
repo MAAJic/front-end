@@ -18,6 +18,8 @@ import { TokenInterceptorService } from "../app/services/token-interceptor.servi
 import { LoginComponent } from "../app/components/login/login.component";
 import { CreatEventComponent } from '../app/components/creat-event/creat-event.component';
 import { FileInputComponent } from '../app/components/file-input-component/file-input-component.component';
+import { GoogleMapComponent } from '../app/components/google-map/google-map.component';
+import { GoogleMapsModule } from '@angular/google-maps';
 
 const appRoutes: Routes = [
   {
@@ -55,7 +57,8 @@ const appRoutes: Routes = [
     JwPaginationComponent,
     CardComponent,
     LoginComponent,
-    InfoComponent
+    InfoComponent,
+    GoogleMapComponent
   ],
   imports: [
     BrowserModule,
@@ -64,7 +67,8 @@ const appRoutes: Routes = [
     RouterModule.forRoot(appRoutes),
     MDBBootstrapModule.forRoot(),
     ReactiveFormsModule,
-    FormsModule
+    FormsModule,
+    GoogleMapsModule
   ],
   providers: [
     FetchDataService,
