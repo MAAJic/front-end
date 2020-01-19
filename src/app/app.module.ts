@@ -16,6 +16,8 @@ import { FetchDataService } from "../app/services/fetch-data.service";
 import { InfoComponent } from "./components/info/info.component";
 import { TokenInterceptorService } from "../app/services/token-interceptor.service";
 import { LoginComponent } from "../app/components/login/login.component";
+import { CreatEventComponent } from '../app/components/creat-event/creat-event.component';
+import { FileInputComponent } from '../app/components/file-input-component/file-input-component.component';
 
 const appRoutes: Routes = [
   {
@@ -34,12 +36,18 @@ const appRoutes: Routes = [
     path: "login",
     component: LoginComponent
   },
+  {
+    path: "events/add",
+    component: CreatEventComponent
+  },
   { path: "**", component: HomeComponent } // If no matching route found, go back to home route
 ];
 
 @NgModule({
   declarations: [
     AppComponent,
+    CreatEventComponent,
+    FileInputComponent,
     NavBarComponent,
     HomeComponent,
     ProfileComponent,
