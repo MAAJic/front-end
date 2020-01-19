@@ -18,8 +18,10 @@ import { TokenInterceptorService } from "../app/services/token-interceptor.servi
 import { StarRatingComponent } from "./components/starRating/star-rating/star-rating.component";
 import { RatingModule } from "ngx-bootstrap/rating";
 import { LoginComponent } from "../app/components/login/login.component";
-import { CreatEventComponent } from "../app/components/creat-event/creat-event.component";
-import { FileInputComponent } from "../app/components/file-input-component/file-input-component.component";
+import { CreatEventComponent } from '../app/components/creat-event/creat-event.component';
+import { FileInputComponent } from '../app/components/file-input-component/file-input-component.component';
+import { GoogleMapComponent } from '../app/components/google-map/google-map.component';
+import { GoogleMapsModule } from '@angular/google-maps';
 import { EventDetailsComponentComponent } from "./components/event/event-details-component/event-details-component.component";
 import { EventCreatorDetailsComponent } from "./components/event/event-creator-details/event-creator-details.component";
 import { MainImageEventBannerComponent } from "./components/event/main-image-event-banner/main-image-event-banner.component";
@@ -67,6 +69,7 @@ const appRoutes: Routes = [
     CardComponent,
     LoginComponent,
     InfoComponent,
+    GoogleMapComponent,
     StarRatingComponent,
     EventDetailsComponentComponent,
     EventCreatorDetailsComponent,
@@ -83,6 +86,8 @@ const appRoutes: Routes = [
     MDBBootstrapModule.forRoot(),
     FormsModule,
     ReactiveFormsModule,
+    FormsModule,
+    GoogleMapsModule,
     RatingModule.forRoot()
   ],
 
