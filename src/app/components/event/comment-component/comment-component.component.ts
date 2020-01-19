@@ -1,5 +1,6 @@
-import { Component, OnInit, Input } from "@angular/core";
+import { Component, OnInit, Input, Output, EventEmitter } from "@angular/core";
 import { NgForm } from "@angular/forms";
+import { FetchDataService } from "src/app/services/fetch-data.service";
 
 @Component({
   selector: "app-comment-component",
@@ -8,13 +9,19 @@ import { NgForm } from "@angular/forms";
 })
 export class CommentComponentComponent implements OnInit {
   @Input() info: any;
+  @Output() comment = new EventEmitter<any>();
   content: string;
-  constructor() {}
+  constructor(private fetcher: FetchDataService) {}
 
   ngOnInit() {}
   onSubmit(form: NgForm) {
     console.log(form.value);
-    console.log(document.getElementById("textarea"));
+    const input = document.getElementById("textarea");
+    // this.comment.emit(input);
+    this.fetcher.comments.next({
+      author: this.info.userInfo.username,
+      imgUrl: this.info.userInfo.imgUrl,
+      content: input
+    });
   }
-
 }
