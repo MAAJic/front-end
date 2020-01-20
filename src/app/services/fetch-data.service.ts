@@ -3,6 +3,7 @@ import { HttpClient } from "@angular/common/http";
 import { Subject } from "rxjs";
 
 import { CreatEventComponent } from "./../components/creat-event/creat-event.component";
+import { FindNearestEventComponent } from './../components/find-nearest-event/find-nearest-event.component';
 
 @Injectable({
   providedIn: "root"
@@ -13,7 +14,6 @@ export class FetchDataService {
   dataSource = this.data.asObservable();
   events: any;
   user: Object;
-
   comments = new Subject<any>();
   comment = this.comments.asObservable();
   async getAllEvents() {
@@ -88,5 +88,12 @@ export class FetchDataService {
     this.http
       .post("http://localhost:5000/api/event/comments/add", { content, id })
       .subscribe(data => console.log(data));
+  }
+  findNearest( address ) {
+    console.log(address)
+    return this.http
+      .post("http://localhost:5000/api/events/findNearestEvent", address )
+      .toPromise()
+      
   }
 }
