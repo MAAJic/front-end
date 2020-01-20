@@ -33,11 +33,10 @@ export class GoogleMapComponent implements OnInit {
   // }
 
   ngOnInit() {
-    console.log(this);
     if (this.address) {
-      let lat = this.address[1];
-      let lng = this.address[0];
-      console.log(this.address);
+      let lat = this.address[0];
+      let lng = this.address[1];
+      console.log({ lat, lng });
       this.center = {
         lat,
         lng
@@ -92,7 +91,7 @@ export class GoogleMapComponent implements OnInit {
   click(event: google.maps.MouseEvent) {
     let lat = event.latLng.lat();
     let lng = event.latLng.lng();
-    console.log(lat, typeof lat);
+    console.log({ lat, lng });
     this.marker = {
       position: {
         lat,

@@ -13,15 +13,17 @@ export class EventDetailsComponentComponent implements OnInit {
   event: any;
   userInfo: Object;
   userInput: any;
+  map: boolean = false;
   constructor(private fetcher: FetchDataService) {}
 
   async ngOnInit() {
     const eventID = window.location.pathname.split("/")[2];
     this.event = await this.fetcher.fetchEvent(eventID);
+    if (this.event.location.coordinates) this.map = true;
     try {
       await this.fetcher.getUserInfo();
       this.userInfo = this.fetcher.user;
-      console.log(this.event, this.userInfo);
+      console.log(this.event);
     } catch (err) {
       if (err.status === 401) {
         this.userInfo = {
