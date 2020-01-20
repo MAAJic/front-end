@@ -89,4 +89,8 @@ export class FetchDataService {
       .post("http://localhost:5000/api/event/comments/add", { content, id })
       .subscribe(data => console.log(data));
   }
+
+  getProfile(id) {
+    return this.http.get(`http://localhost:5000/api/profile/${id}`).toPromise();
+  }
 }

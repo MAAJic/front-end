@@ -1,8 +1,16 @@
-<mdb-carousel class="carousel slide carousel-fade  all" [animation]="'fade'">
-  <mdb-carousel-item class="crl all" *ngFor="let event of events; let indx = index">
-    <h3>{{event.title}} </h3>
-    <div id="mask">
-      <img class="d-block" src="{{ event.image }}" alt="First slide">
-    </div>
-  </mdb-carousel-item>
-</mdb-carousel>
+<div *ngIf="display; else elseBlock">
+  <mdb-carousel class="carousel slide carousel-fade  all" [animation]="'fade'">
+    <mdb-carousel-item class="crl all" *ngFor="let event of events; let indx = index">
+      <h3>{{event.eventName}} </h3>
+      <div id="mask">
+        <img class="d-block" src="{{ event.imgUrl }}" alt="First slide">
+      </div>
+    </mdb-carousel-item>
+  </mdb-carousel>
+</div>
+<ng-template #elseBlock>
+  <div style="width: 100%; height: 250px;">
+
+    Alternate text while primary text is hidden
+  </div>
+</ng-template>
