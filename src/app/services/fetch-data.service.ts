@@ -75,6 +75,7 @@ export class FetchDataService {
   }
 
   uploadImageEvent(image) {
+    console.log(image);
     return this.http
       .post("http://localhost:5000/api/events/upload-img", image)
       .subscribe(files => {
@@ -94,6 +95,9 @@ export class FetchDataService {
     return this.http
       .post("http://localhost:5000/api/events/findNearestEvent", address )
       .toPromise()
-      
+  }
+
+  getProfile(id) {
+    return this.http.get(`http://localhost:5000/api/profile/${id}`).toPromise();
   }
 }
