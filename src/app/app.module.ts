@@ -27,6 +27,7 @@ import { EventCreatorDetailsComponent } from "./components/event/event-creator-d
 import { MainImageEventBannerComponent } from "./components/event/main-image-event-banner/main-image-event-banner.component";
 import { CommentComponentComponent } from "./components/event/comment-component/comment-component.component";
 import { SingleCommentComponentComponent } from "./components/event/single-comment-component/single-comment-component.component";
+import { FindNearestEventComponent } from './components/find-nearest-event/find-nearest-event.component';
 
 const appRoutes: Routes = [
   {
@@ -53,6 +54,10 @@ const appRoutes: Routes = [
     path: "events/add",
     component: CreatEventComponent
   },
+  {
+    path: "events/find",
+    component: FindNearestEventComponent
+  },
   { path: "**", component: HomeComponent } // If no matching route found, go back to home route
 ];
 
@@ -76,7 +81,8 @@ const appRoutes: Routes = [
     MainImageEventBannerComponent,
     CommentComponentComponent,
     SingleCommentComponentComponent,
-    InfoComponent
+    InfoComponent,
+    FindNearestEventComponent
   ],
   imports: [
     BrowserModule,
