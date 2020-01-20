@@ -75,6 +75,7 @@ export class FetchDataService {
   }
 
   uploadImageEvent(image) {
+    console.log(image);
     return this.http
       .post("http://localhost:5000/api/events/upload-img", image)
       .subscribe(files => {

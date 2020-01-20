@@ -20,6 +20,7 @@ export class CreatEventComponent implements OnInit {
   }
 
   async onSubmit(form: NgForm) {
+    console.log(form.value);
     if (CreatEventComponent.uploadedFile) {
       await this.fetchData.creatEvent({
         ...form.value,

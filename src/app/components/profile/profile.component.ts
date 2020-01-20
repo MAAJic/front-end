@@ -1,5 +1,6 @@
 import { Component, OnInit } from "@angular/core";
 import { FetchDataService } from "src/app/services/fetch-data.service";
+import { Router } from "@angular/router";
 
 @Component({
   selector: "app-profile",
@@ -8,7 +9,7 @@ import { FetchDataService } from "src/app/services/fetch-data.service";
 })
 export class ProfileComponent implements OnInit {
   userInfo: any;
-  constructor(private fetchData: FetchDataService) {}
+  constructor(private fetchData: FetchDataService, private router: Router) {}
   logged: Boolean;
   upcommingEvents = [];
   previousEvents = [];
@@ -26,6 +27,7 @@ export class ProfileComponent implements OnInit {
         this.sortEvent();
       } catch (err) {
         console.log({ err });
+        this.router.navigate(["/login"]);
         this.logged = false;
       }
     }
