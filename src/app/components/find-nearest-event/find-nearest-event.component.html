@@ -1,0 +1,28 @@
+<div class="container">
+    <form class="md-form form-sm active-pink active-pink-2" #findNearest="ngForm" (ngSubmit)="search(findNearest)">
+        <div class="active-cyan-3 active-cyan-4 mb-4">
+            <input class="form-control" type="text" placeholder="Address" aria-label="address" name= "address" ngModel>
+        </div>
+        <div class="active-cyan-3 active-cyan-4 mb-4">
+            <input class="form-control" type="text" placeholder="Category" aria-label="Category" name= "category" ngModel>
+        </div>
+        <div class="active-cyan-3 active-cyan-4 mb-4">
+            <input class="form-control" type="number" placeholder="Max Distance" aria-label="Search" name= "maxDistance" ngModel>
+        </div>
+          <button type="submit" class="btn btn-info">Find Nearest</button>
+    </form>
+
+    <div class="row">
+        <div class="col-md-6 myCol" *ngFor="let event of pageOfItems">
+            <app-card [event]="event"></app-card>
+        </div>
+    </div>
+
+    <div class="pages">
+        <jw-pagination class="body" [items]="events" [pageSize]="4" [maxPages]="3" (changePage)="onChangePage($event)">
+        </jw-pagination>
+    </div>
+
+</div>
+
+
